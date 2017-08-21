@@ -1,4 +1,4 @@
-#  This repository contains a list of projects for my blog.
+#  This repository contains a list of projects of my blog.
 
 To find the desired project please select an appropriate branch or use menu.
 
