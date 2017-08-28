@@ -10,9 +10,17 @@ import UIKit
 
 class TheSecondViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  @IBOutlet weak var numberOfTapsLabelSecond: UILabel!
+  var tapsFromThird = 0
 
-       
+  let third = TheThirdViewController()
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    third.onTap = { text in
+      self.numberOfTapsLabelSecond.text = text
+      print("TheSecondViewController", text)
     }
+  }
 }

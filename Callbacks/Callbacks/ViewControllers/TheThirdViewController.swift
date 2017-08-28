@@ -9,14 +9,24 @@
 import UIKit
 
 class TheThirdViewController: UIViewController {
-  
-    var dummy = Dummy()
-    
-    override func viewDidLoad() {
-      super.viewDidLoad()
-
-      dummy.onTap = { text in
-        print(text)
-      }
+  // MARK: - IBOutlets
+  @IBOutlet weak var numberOfTapsLabel: UILabel!
+  // MARK: - Properties
+  var taps = 0 {
+    didSet {
+      numberOfTapsLabel.text = String(taps)
     }
+  }
+  var onTap: ((String) -> ())?
+  var dummy = Dummy()
+  // MARK: - View Lifecycle
+  override func viewDidLoad() {
+    super.viewDidLoad()
+  }
+  // MARK: - Actions
+  @IBAction func buttonDidTap(_ sender: UIButton) {
+    taps = taps + 1
+    onTap?(String(taps))
+    print(onTap?(String("taps")))
+  }
 }

@@ -84,15 +84,26 @@
                                     <segue destination="Udw-8i-ufY" kind="show" id="sPy-Zr-7Eh"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daf-Xm-PMQ">
+                                <rect key="frame" x="176.5" y="323" width="23.5" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="igS-bT-wMA" firstAttribute="centerX" secondItem="2Fu-ii-nu9" secondAttribute="centerX" id="T6T-W0-wB2"/>
                             <constraint firstItem="rec-1o-KaR" firstAttribute="bottom" secondItem="igS-bT-wMA" secondAttribute="bottom" constant="19" id="pc3-T6-vBh"/>
+                            <constraint firstItem="daf-Xm-PMQ" firstAttribute="centerX" secondItem="2Fu-ii-nu9" secondAttribute="centerX" id="tai-y8-LgU"/>
+                            <constraint firstItem="daf-Xm-PMQ" firstAttribute="centerY" secondItem="2Fu-ii-nu9" secondAttribute="centerY" id="v8q-Tl-e5T"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rec-1o-KaR"/>
                     </view>
                     <navigationItem key="navigationItem" title="Second" id="1kF-dF-j4j"/>
+                    <connections>
+                        <outlet property="numberOfTapsLabelSecond" destination="daf-Xm-PMQ" id="LqA-Or-JDW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1TG-0S-20K" sceneMemberID="firstResponder"/>
             </objects>
@@ -105,10 +116,43 @@
                     <view key="view" contentMode="scaleToFill" id="mAH-8R-ofY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XjM-Zx-Fw5">
+                                <rect key="frame" x="162" y="318" width="50" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Tap me"/>
+                                <connections>
+                                    <action selector="buttonDidTap:" destination="Udw-8i-ufY" eventType="touchUpInside" id="LUE-2n-ybr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWh-2b-1If">
+                                <rect key="frame" x="168" y="225" width="38" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3Q-DE-lFQ">
+                                <rect key="frame" x="181" y="254" width="13" height="38"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="XjM-Zx-Fw5" firstAttribute="top" secondItem="tWh-2b-1If" secondAttribute="bottom" constant="72" id="4OO-YY-xxb"/>
+                            <constraint firstItem="h3Q-DE-lFQ" firstAttribute="centerX" secondItem="mAH-8R-ofY" secondAttribute="centerX" id="P5m-J0-OdT"/>
+                            <constraint firstItem="XjM-Zx-Fw5" firstAttribute="centerY" secondItem="mAH-8R-ofY" secondAttribute="centerY" id="S4d-wc-kxM"/>
+                            <constraint firstItem="XjM-Zx-Fw5" firstAttribute="top" secondItem="h3Q-DE-lFQ" secondAttribute="bottom" constant="26" id="aXk-px-eYK"/>
+                            <constraint firstItem="XjM-Zx-Fw5" firstAttribute="centerX" secondItem="mAH-8R-ofY" secondAttribute="centerX" id="enF-G6-jdg"/>
+                            <constraint firstItem="tWh-2b-1If" firstAttribute="centerX" secondItem="mAH-8R-ofY" secondAttribute="centerX" id="jnG-Q3-Kes"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="j33-aK-Oxf"/>
                     </view>
                     <navigationItem key="navigationItem" title="Third" id="ByE-At-WLN"/>
+                    <connections>
+                        <outlet property="numberOfTapsLabel" destination="h3Q-DE-lFQ" id="Da0-6I-r4R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j9q-tM-pRg" sceneMemberID="firstResponder"/>
             </objects>
