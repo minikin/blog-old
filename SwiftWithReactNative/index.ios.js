@@ -9,8 +9,17 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Button
 } from 'react-native';
+import { NativeModules } from 'react-native';
+
+const testManager = NativeModules.BridgeReactImagePicker;
+testManager.addEvent('Birthday Party', '4 Privet Drive, Surrey');
+
+function  onPressLearnMore() {
+    return testManager.showPicker();
+};
 
 export default class SwiftWithReactNative extends Component {
   render() {
@@ -26,6 +35,12 @@ export default class SwiftWithReactNative extends Component {
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
         </Text>
+        <Button
+          onPress={onPressLearnMore}
+          title="Learn More"
+          color="#841584"
+          accessibilityLabel="Learn more about this purple button"
+        />
       </View>
     );
   }
